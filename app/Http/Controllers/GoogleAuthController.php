@@ -31,7 +31,7 @@ class GoogleAuthController extends Controller
             
           Auth::login($new_user);
           
-          $req->session()->put('user', $google_user->email);
+          $req->session()->put('user', $google_user->getEmail());
           
           return redirect()->intended('/dashboard');
         }
